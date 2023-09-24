@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/collage.css' %}">
+        
+        <script>
+            function popCourses() {
+        
+                     var departmentDropdown = document.getElementById("department");
+                     var courseDropdown = document.getElementById("course");
+                     courseDropdown.innerHTML = "";
+                     var selectedDepartment=departmentDropdown.value;
+                     var courses={
+                       "MECHANICAL":["Welding","Aerospace","Automobiles"],
+                       "ELECTRICAL":["Transmission","HvAc","Control System"],
+                       "ELECTRONICS":["Bsc electronics ","Msc Electronics","Pcb"],
+                       "COMMERCE":["Bcom","Mcom","Statics"],
+                       "COMPUTERSCIENCE":["Bca","Mca","Msc computer"]
+        
+                     };
+                    var courseoptions=courses[selectedDepartment] ;
+                    for (var i=0 ; i<courseoptions.length; i++)
+                    {
+                       var option=document.createElement("option") ;
+                       option.text=courseoptions.[i] ; 
+                       courseDropdown.add(option);
+        
+                    }
+        
+            }
+        
+        
+        </script>
+
+
+
+
+
+
+
+
+
+
+       
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+
+
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h1 class="display-4 text-muted">Entry Form</h1>
+        <form action="{% url 'collegeapp:form_student' %}" method="post" enctype="multipart/form-data">
+            <div class="row mb-3"></div>
+
+
+            {% csrf_token %}
+
+        
+            
+            <div class="form-group"><input type="text" class="form-control" name="fullname" placeholder="FullName">
+            </div>
+            <div class="form-group"><input type="date" class="form-control" name="date" placeholder="Date Of Birth">
+            </div>
+            <div class="form-group"><input type="number" class="form-control" name="age" placeholder="Age">
+            </div>
+            <select name="gender" id="gender" class="form-select" aria-label="Default select example">
+                <option selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            <div class="form-group"><input type="text" class="form-control" name="number" placeholder="Phone Number">
+            </div>
+
+            <div class="form-group"><input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+           
+            <div class="form-group"><input type="text" class="form-control" name="address" placeholder="Address">
+            </div>
+             <!-- {% for message in messages %}
+
+            <div class="alert alert-muted text-danger text-center">{{ message }}</div>
+
+            {% endfor %} 
+            <div class="form_group">DEPARTMENT<select name="name" class="form-control">
+                {% for student in students %}
+                <option value="{{ student.id }}">{{ student.student_first_name }} {{ student.student_last_name }}</option>
+                {% endfor %}
+            </select>
+        </div> -->
+        <!-- <select class="form-control w-25" name="dept">
+            <option value="">Select Department</option><br> 
+         
+            {% for i in dep %}
+            
+            <option value="{{i.id}}" >{{i.departmentname}}</option><br>
+            
+            {% endfor %}
+
+        </select>
+
+
+            <select class="form-control w-25" name="coses">
+                <option value="">Select Course</option><br> 
+             
+                {% for i in cose %}
+                
+                <option value="{{i.id}}" >{{i.coursename}}</option><br>
+                
+                {% endfor %} 
+                
+                
+                </select> -->
+
+
+
+         
+
+
+
+            <!-- <div class="form_group">Course<select name="address" class="form-control">
+                {% for student in students %}
+                <option value="{{ student.id }}">{{ student.student_address }}</option>
+                {% endfor %}
+            </select>
+            </div> -->
+            Department:
+            <select id="department" onchange="popCourses()">
+                 <option value="select">----Select---</option>
+                 <option value="MECHANICAL">MECHANICAL</option>
+                 <option value="ELECTRICAL">ELECTRICAL</option>
+                 <option value="ELECTRONICS">ELECTRONICS</option>
+                 <option value="COMMERCE">COMMERCE</option>
+                 <option value="COMPUTERSCIENCE">COMPUTERSCIENCE</option>
+
+            </select>
+
+            Course:
+
+            <select id="course">
+                <option disabled>----Select---</option>
+             
+
+           </select>
+
+
+
+
+            <select name="purpose" id="purpose" class="form-select" aria-label="Default select example">
+                <option selected>Purpose</option>
+                <option value="Enq">Enquiry</option>
+                <option value="Con">Confirm</option>
+                <option value="Ret">Return</option>
+              </select>
+
+
+
+
+
+
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-block btn-warning mt-2" id="lgbtn">Submit Details</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

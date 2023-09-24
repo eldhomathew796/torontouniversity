@@ -1,0 +1,329 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Toronto University</title>
+
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' %}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+
+
+    
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 left-item">
+                        <ul>
+                            <li><i class="fas fa-envelope-square"></i> sales@smarteyeapps.com</li>
+                            <li><i class="fas fa-phone-square"></i> +123 987 887 765</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 d-none d-lg-block right-item">
+                        <ul>
+                            <li><a><i class="fab fa-github"></i></a></li>
+                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                            <li> <a><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a><i class="fab fa-twitter"></i></a></li>
+                            <li> <a><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="nav-head" class="header-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 nav-img">
+                        <img src="{% static 'assets/images/logo.png'%}" alt="">
+                       <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                    </div>
+                    <div id="menu" class="col-md-9 d-none d-md-block nav-item">
+                        <ul>
+                            <li><a href="{% url 'collegeapp:index' %}">HOME</li></a>
+                            <li><a href="{% url 'collegeapp:login' %}">LOGIN</li></a>
+                            <li> <a href="{% url 'collegeapp:register' %}">REGISTER</li></a>
+                           {% comment %} <li><a href="cources.html">DEPARTMENT</a></li>  {% endcomment %}
+                            {% comment %} <li><a href="blog.html">Blog</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact_us.html">Contact Us</a></li> {% endcomment %}
+                        </ul>
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+    {% block body %}
+
+
+    <!--  ************************* Page Title Starts Here ************************** -->
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2> University of  Toranto</h2>
+                {% comment %} <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> About Us</li>
+                </ul> {% endcomment %}
+            </div>
+        </div>
+    </div>
+
+    <!-- ######## Page  Title End ####### -->
+
+    <section class="with-medical">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <img src="{% static 'assets/images/why.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-6 col-md-12 txtr">
+                    <h4>Why choos UG & PG with <br>
+                        <span>Toronto University</span>
+                    </h4>
+                    <p>The University of Toronto (UToronto or U of T) is a public research university in Toronto, Ontario, Canada, located on the grounds that surround Queen's Park. It was founded by royal charter in 1827 as King's College, the first institution of higher learning in Upper Canada. Originally controlled by the Church of England, the university assumed its present name in 1850 upon becoming a secular institution. As a collegiate university, it comprises 11 colleges each with substantial autonomy on financial and institutional affairs and significant differences in character and history. The university maintains three campuses, the oldest of which is St. George, located in downtown Toronto. The other two satellite campuses are located in Scarborough and Mississauga.</p>
+                    <p>The University of Toronto offers over 700 undergraduate and 200 graduate programs. The university receives the most annual scientific research funding and endowment of any Canadian university and is one of two members of the Association of American Universities outside the United States, alongside McGill University.[7] Academically, the University of Toronto is noted for influential movements and curricula in literary criticism and communication theory, known collectively as the Toronto School. It is the largest university in Canada in terms of enrolment with more than 97,000 students</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% comment %} <div class="col-lg-6 col-md-12">
+        <div class="container">
+            <div class="session-title row">
+                <a href="" class="btn btn-success hidden-xs">Click HERE-Fill your Details</a> 
+                
+            </div> {% endcomment %}
+
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                {% comment %} <button type="button"  href="{% url 'collegeapp:form_student' %}" class="btn btn-primary btn-lg">Click HERE-Fill your Details</button> {% endcomment %}
+                <a href="{% url 'collegeapp:formss' %}" class="btn btn-success hidden-xs">Click Here-Fill your Details</a> 
+              </div>
+
+   
+
+
+    {% comment %} <div class="doctor-message">
+        <div class="inner-lay">
+            <div class="container">
+               <div class="row session-title">
+                   <h2>Toranto University in numbers</h2>
+                   <p>We can talk for a long time about advantages of our Dental clinic before other medical treatment facilities.
+But you can read the following facts in order to make sure of all pluses of our clinic:</p>
+               </div>
+                <div class="row">
+                    <div class="col-sm-3 numb">
+                        <h3>12+</h3>
+                        <span>YEARS OF EXPEREANCE</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>100+</h3>
+                        <span>Cources</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>52+</h3>
+                        <span>QUALIFIED STUFF</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>18+</h3>
+                        <span>MASTER CERTIFICATIONS</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>  
+    
+
+<div class="our-instructor">
+    <div class="container">
+         <div class="session-title row">
+            <h2>Our Instructors</h2>
+        </div>
+        <div class="instruct-row row">
+            <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{% static 'assets/images/team/avatar-2.jpg' %}" alt="">
+                <h6>Andre Jhon</h6>
+                <p>Graphic Design</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{% static 'assets/images/team/avatar-3.jpg' %}" alt="">
+                <h6>Ahalkji Jhon</h6>
+                <p>Graphic Design</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{% static 'assets/images/team/avatar-5.jpg' %}" alt="">
+                <h6>Reniju Sam</h6>
+                <p>Graphic Design</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{% static 'assets/images/team/avatar-4.jpg'%}" alt="">
+                <h6>Depak Andrw</h6>
+                <p>Graphic Design</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+    {% endcomment %}
+
+{% comment %} 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 about">
+                    <h2>About Us</h2>
+                    <p>Phasellus scelerisque ornare nisl sit amet pulvinar. Nunc non scelerisque augue. Proin et sollicitudin velit. </p>
+                    
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="addet">
+                            BlueDart
+                            Marthandam (K.K District)
+                            Tamil Nadu, IND 
+                        </div>
+                    </div>
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="far fa-envelope-open"></i>
+                        </div>
+                        <div class="addet">
+                            info@smarteyeapps.com <br>
+                            sales@smarteyeapps.com
+                        </div>
+                    </div>
+                    <div class="foot-address">
+                        <div class="icon">
+                             <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="addet">
+                            +23 323 43434 <br>
+                            +1 3232 434 55
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 fotblog">
+                    <h2>From latest Blog</h2>
+                    <div class="blohjb">
+                        <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                        <span>22-1-2019</span>
+                    </div>
+                    <div class="blohjb">
+                        <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                        <span>22-1-2019</span>
+                    </div>
+                    <div class="blohjb">
+                        <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                        <span>22-1-2019</span>
+                    </div>
+                </div>
+                <div class="col-md-3 glink">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="about_us.html"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-angle-double-right"></i>Services</a></li>
+                        <li><a href="blog.html"><i class="fas fa-angle-double-right"></i>Blog</a></li>
+                        <li><a href="pricing.html"><i class="fas fa-angle-double-right"></i>Gallery</a></li>
+                        <li><a href="contact_us.html"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 tags">
+                    <h2>Easy Tags</h2>
+                    <ul>
+                        <li>Finance</li>
+                        <li>Web Design</li>
+                        <li>Internet Pro</li>
+                        <li>Node Js</li>
+                        <li>Java Swing</li>
+                        <li>Angular Js</li>
+                        <li>Vue Js</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copy">
+                <div class="container">
+                    <a href="https://www.smarteyeapps.com/">2015 &copy; All Rights Reserved | Designed and Developed by Smarteyeapps</a>
+                    
+                    <span>
+                    <a><i class="fab fa-github"></i></a>
+                    <a><i class="fab fa-google-plus-g"></i></a>
+                    <a><i class="fab fa-pinterest-p"></i></a>
+                    <a><i class="fab fa-twitter"></i></a>
+                    <a><i class="fab fa-facebook-f"></i></a>
+            </span>
+                </div>
+    
+            </div>           {% endcomment %}
+               
+     {% endblock %} 
+    
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    
+    
+    
+    
+    
+    
+
+
+</html>
